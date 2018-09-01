@@ -14,6 +14,7 @@ class ViewTodo extends React.Component {
 		}
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleRadioChange= this.handleRadioChange.bind(this);
 	}
 
 	componentDidMount() {
@@ -40,6 +41,12 @@ class ViewTodo extends React.Component {
     	console.log(this.state);
   	}
 
+  	handleRadioChange(event) {
+		this.setState({
+    		completed: event.target.value
+  		});
+	}
+
 	handleSubmit(event) {
 		// event.preventDefault();
 		fetch(`/todo/${this.props.match.params.id}`, {
@@ -56,14 +63,13 @@ class ViewTodo extends React.Component {
 				completed: this.state.completed
 			})
 		})
-		// .then(res => res.json())
-		// .then(json => {
-		// 	// this.componentDidMount();
-		// 	console.log(json);
-		// })
-		// .catch(err => {
-		// 	console.log(err.message);
-		// })
+		.then(res => res.json())
+		.then(json => {
+			console.log(json);
+		})
+		.catch(err => {
+			console.log(err.message);
+		})
 	}
 
 	render() {
@@ -81,10 +87,12 @@ class ViewTodo extends React.Component {
 	    				<input name="due" 			onChange={this.handleInputChange} className="todoDue" defaultValue={moment(this.state.due).format('MMM-D-YY')}/>
 	    				
 		    			<div>	
-		    				<label>in progress</label>
-		    				<input type="radio" name="completed" value="false" checked={this.state.completed === 'false'}/>
-		    				<label>completed</label>
-							<input type="radio" name="completed" value="true" checked={this.state.completed === 'true'}/>
+		    				<label>in progress
+		    					<input type="radio" value="false" checked={this.state.completed === "false"} onChange={this.handleRadioChange}/>
+		    				</label>
+		    				<label>completed
+								<input type="radio" value="true" checked={this.state.completed === "true"} onChange={this.handleRadioChange}/>
+							</label>
 						</div>
 
 	    				<input className="todoEditSubmit" type='submit' value="Submit" />

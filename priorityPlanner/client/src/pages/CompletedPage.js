@@ -32,7 +32,7 @@ class CompletedPage extends React.Component {
         		</Link>
         		<div className="todoDescription">{completed.description}</div>
         		<div className="todoPriority">{completed.priority}</div>
-        		<div className="todoDue">{moment(completed.due).format('MMM-Do-YY')}</div>
+        		<div className="todoDue">{moment(completed.due).format('MMM-D-YY')}</div>
         	</div>
         )}
 

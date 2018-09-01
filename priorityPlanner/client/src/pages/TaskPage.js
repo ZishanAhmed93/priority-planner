@@ -32,7 +32,7 @@ class TaskPage extends React.Component {
         		</Link>
         		<div className="todoDescription">{task.description}</div>
         		<div className="todoPriority">{task.priority}</div>
-        		<div className="todoDue">{moment(task.due).format('MMM-Do-YY')}</div>
+        		<div className="todoDue">{moment(task.due).format('MMM-D-YY')}</div>
         	</div>
         )}
 

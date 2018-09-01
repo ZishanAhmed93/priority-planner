@@ -32,7 +32,7 @@ class BacklogPage extends React.Component {
         		</Link>
         		<div className="todoDescription">{backlog.description}</div>
         		<div className="todoPriority">{backlog.priority}</div>
-        		<div className="todoDue">{moment(backlog.due).format('MMM-Do-YY')}</div>
+        		<div className="todoDue">{moment(backlog.due).format('MMM-D-YY')}</div>
         	</div>
         )}
 
