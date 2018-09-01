@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 // import models from './models';
 const models = require('./models');
 
+
 var app = express();
 
 app.use(logger('dev'));
