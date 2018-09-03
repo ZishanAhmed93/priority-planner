@@ -9,6 +9,7 @@ import PriorityPage from './pages/PriorityPage.js';
 import TaskPage from './pages/TaskPage.js';
 import BacklogPage from './pages/BacklogPage.js';
 import CompletedPage from './pages/CompletedPage.js';
+import AddPage from './pages/AddTodo.js';
 
 class App extends Component {
  
@@ -22,10 +23,11 @@ class App extends Component {
 
           <div>
             <ul className="navbar">
-              <Link to="/priorities" >Priorities</Link>
-              <Link to="/tasks">Tasks</Link>
-              <Link to="/backlog" >Backlog</Link>
-              <Link to="/completed" >Completed</Link>    
+              <Link to="/priorities" >Priorities </Link>
+              <Link to="/tasks">Tasks </Link>
+              <Link to="/backlog" >Backlog </Link>
+              <Link to="/completed" >Completed </Link>
+              <Link to="/add" >Add</Link>    
             </ul>
 
             <div className="todoPageWrap">
@@ -36,6 +38,7 @@ class App extends Component {
               <Route exact path="/tasks/" component={TaskPage} />
               <Route exact path="/backlog/" component={BacklogPage} />
               <Route exact path="/completed/" component={CompletedPage} />
+              <Route exact path="/add/" component={AddPage} />
             </div>
             </Switch>
             </div>
