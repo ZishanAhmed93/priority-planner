@@ -68,3 +68,15 @@
   grid-area: due;
   justify-self: start;
 }
+
+.addButton{
+  height: 40px;
+  width: 40px;
+  background-color: #e53935;
+  color: white;
+  border-radius: 20px;
+  line-height: 35px;
+  font-size: 40px;
+  text-decoration: none;
+  text-align: center;
+}

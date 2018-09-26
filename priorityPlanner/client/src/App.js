@@ -27,7 +27,7 @@ class App extends Component {
               <Link to="/tasks">Tasks </Link>
               <Link to="/backlog" >Backlog </Link>
               <Link to="/completed" >Completed </Link>
-              <Link to="/add" >Add</Link>    
+              <Link className="addButton" to="/add"> <div className="addButton">+</div> </Link>    
             </ul>
 
             <div className="todoPageWrap">
